@@ -1,5 +1,7 @@
 [<< Back to HOME](README.md)
 
+1. [Login](#login)
+
 ## Login
 
 #### To call server APIs a token is required. To get this token using the below mentioned login API
