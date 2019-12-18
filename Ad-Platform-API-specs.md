@@ -2,6 +2,7 @@
 
 1. [Login](#login)
 2. [Get Customers](#get-customers)
+3. [Get Devices for PDN](#get-device-for-pdn)
 
 ## Login
 
@@ -84,6 +85,83 @@ RESPONSE - code - 200
       "contactNoCountryCode": "+1",
       "alternateNumberCountryCode": "+1",
       "uniqueCustomerIdMask": "AB6C3",
+    }
+  ],
+  "name": null,
+  "code": 20,
+  "message": null
+}
+```
+## Get Devices for PDN
+
+    /pdn/device [GET]
+
+QUERY
+
+    status=1         // optional 1 for ACTIVE and 2 for INACTIVE
+
+HEADER
+
+    Authorization : Bearer <token>
+    customerId : <customerId>
+
+
+BODY
+
+    NA
+
+RESPONSE - code - 200
+```javascript
+{
+  "result": [
+    {
+      "deviceId": 143,
+      "clientGeneratedDeviceIdentifier": "77eaea49-a768-43e1-9446-e4ec76457c2f",
+      "deviceName": "Cool Device",
+      "deviceGroupId": 129,
+      "deviceGroupName": "Cafeteria",
+      "locationId": 82,
+      "location": {
+        "locationId": 82,
+        "locationName": "Noida"
+      },
+      "deviceOs": "ANDROID|WINDOWS",
+      "deviceWifiMacAddress": "fc:67:36:f6:a3:7e",
+      "deviceEthernetMacAddress": "ac:e5:36:f6:7e:a3",
+      "isAudioEnabled": "ON",
+      "localServerIP": "192.168.0.54",
+      "status": 1,
+      "lastSyncTime": 156834993032,
+      "lastAccess": 156834993032,
+      "aspectRatioId": 12,
+      "isManuallyAdded": true,
+      "panels": [
+        {
+          "panelId": 132,
+          "isAudioEnabled": "OFF",
+          "panelStatus": "ON_HDMI_CONNECTED",
+          "panelIp": "192.168.0.56",
+          "deviceId": 323,
+          "panelName": "First floor lobby",
+          "panelSerialNumber": "SR445X4454",
+          "status": 1,
+          "timeOfPanelStatus": 156834993032,
+          "panelActivityStatus": "ON",
+          "hdmiActivityStatus": "CONNECTED",
+          "panelControl": "RJ45"
+        }
+      ],
+      "deviceConnectivity": "CONNECTED",
+      "timeOfDeviceStatus": 156834993032,
+      "inActiveTime": 156834993032,
+      "appVersion": "2.5443.53",
+      "camera": {
+        "cameraId": 12,
+        "deviceId": 143,
+        "cameraType": "USB",
+        "cameraIp": "192.168.23.55",
+        "cameraPurpose": "ONLY_COLLECT_DATA"
+      }
     }
   ],
   "name": null,
