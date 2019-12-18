@@ -2,7 +2,7 @@
 
 1. [Login](#login)
 2. [Get Customers](#get-customers)
-3. [Get Devices for PDN](#get-device-for-pdn)
+3. [Get Devices for PDN](#get-devices-for-pdn)
 
 ## Login
 
