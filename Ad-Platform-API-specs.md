@@ -351,3 +351,58 @@ RESPONSE - code - 200
   "message": null
 }
 ```
+
+## Get schedule by deviceId (to be called by PDN server)
+
+    /pdn/schedule/<deviceId>  [GET]
+    
+QUERY
+
+    start-date=2018-12-30  // required
+    end-date=2019-01-15    // required
+    
+HEADER
+
+    Content-Type:application/json
+    Authorization:Bearer {token}
+    customerId: <customerId>
+
+BODY
+
+    NA
+
+RESPONSE - code - 200
+```javascript
+{
+  "result": {
+    "deviceSchedule": {
+      "deviceId": 1,
+      "layouts": [
+        {
+          "layoutId": 1,
+          "layoutType" : "NORMAL",
+          "startDateTime": "2018-12-30 11:30:00",
+          "endDateTime": "2018-12-30 13:30:00",
+          "planogramId": 15,
+          "planogramName" : "Weekend Sale planogram",
+          "offsetInSeconds": 23
+        },
+        {
+          "layoutId" : 2,
+          "layoutType" : "ADVERTISEMENT",
+          "startDateTime": "2018-12-30 14:30:00",
+          "endDateTime": "2018-12-30 15:30:00",
+          "planogramId": 26,
+          "planogramName" : "All food and bevrages planogram",
+          "offsetInSeconds": 0
+        }
+      ],
+      "startDateTime": "2018-12-30",
+      "endDateTime": "2019-01-15"
+    }
+  },
+  "name": null,
+  "code": null,
+  "message": null
+}
+```
