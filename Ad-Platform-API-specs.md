@@ -1,6 +1,7 @@
 [<< Back to HOME](README.md)
 
 1. [Login](#login)
+2. [Get Customers](#get-customers)
 
 ## Login
 
