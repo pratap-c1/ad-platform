@@ -4,6 +4,7 @@
 2. [Get Customers](#get-customers)
 3. [Get Devices](#get-devices)
 4. [Get Layout by ID](#get-layout-by-id)
+5. [Get Device schedule](#get-schedule-by-deviceid-to-be-called-by-pdn-server)
 
 ## Login
 
