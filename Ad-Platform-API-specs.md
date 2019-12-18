@@ -2,7 +2,7 @@
 
 1. [Login](#login)
 2. [Get Customers](#get-customers)
-3. [Get Devices for PDN](#get-devices-for-pdn)
+3. [Get Devices for](#get-devices)
 
 ## Login
 
@@ -92,7 +92,7 @@ RESPONSE - code - 200
   "message": null
 }
 ```
-## Get Devices for PDN
+## Get Devices
 
     /pdn/device [GET]
 
@@ -166,6 +166,187 @@ RESPONSE - code - 200
   ],
   "name": null,
   "code": 20,
+  "message": null
+}
+```
+
+## Get Layout by ID
+
+    /pdn/layout/<layoutId> [GET]
+
+QUERY
+
+    NA
+    
+HEADER
+
+    Authorization : Bearer <token>
+    customerId : <customerId>
+
+BODY
+
+    NA
+
+RESPONSE - code - 200
+```javascript
+{
+  "result": {
+    "layoutId": 1232,
+    "layoutName": "Cool Layout",
+    "isPendingForApporval": true,
+    "layoutDescription": "Layout description",
+    "aspectRatio": {
+      "aspectRatioId": 12123,
+      "aspectRatio": "16:9",
+      "defaultWidthInPixel": 864,
+      "defaultHeightInPixel": 486,
+      "status": 1
+    },
+    "totalDurationOfCampaignInSeconds": 1000,
+    "createdByUserId": 15,
+    "createdByFullName": "Abc Xyz",
+    "associatedWithCampaignStrings": [
+      {
+        "layoutStringId": 13,
+        "layoutStringName": "Cool layout String 1"
+      },
+      {
+        "layoutStringId": 15,
+        "layoutStringName": "Cool layout String 2"
+      }
+    ],
+    "backgroundImageContentId": 878,
+    "backgroundImageContentVersion": 12,
+    "backgroundColor": "#888888",
+    "transparencyInPercentage": 50,
+    "audioStartBasedOnLayoutDurationInSeconds": 120,
+    "audioEndBasedOnLayoutDurationInSeconds": 480,
+    "audios": [
+      {
+        "contentId": 12,
+        "contentVersion": 15,
+        "order": 1
+      },
+      {
+        "contentId": 16,
+        "contentVersion": 3,
+        "order": 2
+      }
+    ],
+    "state": "DRAFT|SUBMITTED|APPROVED|PUBLISHED",
+    "status": 1,
+    "canApprove": false,
+    "regions": [
+      {
+        "layoutRegionId": 7267,
+        "layoutRegionName": "My cool region",
+        "regionTransparencyInPercentage": 15,
+        "isAudioEnabled": true,
+        "zIndex": 12,
+        "locations": [
+          {
+            "locationId": 12,
+            "locationName": "Noida"
+          },
+          {
+            "locationId": 122,
+            "locationName": "Delhi"
+          }
+        ],
+        "widthInPercentage": 50,
+        "heightInPercentage": 30,
+        "topLeftCoordinateXInPercentage": 13,
+        "topLeftCoordinateYInPercentage": 18,
+        "widthInPixel": 531,
+        "heightInPixel": 260,
+        "topLeftCoordinateXInPixel": 189,
+        "topLeftCoordinateYInPixel": 694,
+        "globalRegionContentPlaylistId": 123,
+        "globalRegionContentPlaylistContents": [
+          {
+            "contentId": 323,
+            "contentVersion": 1,
+            "contentType": "ADVERTISEMENT", // PDN network should look for this content type
+            "order": 2,
+            "durationInSeconds": 600,
+            "transparencyInPercentage": 0,
+            "entryAnimationId": 329,
+            "exitAnimationId": 329,
+            "displayMode": "NORMAL|STRETCH-TO-FIT"
+          },
+          {
+            "contentId": 84,
+            "contentVersion": 19,
+            "contentType": "VIDEO",
+            "order": 1,
+            "durationInSeconds": 800,
+            "transparencyInPercentage": 30,
+            "entryAnimationId": 329,
+            "exitAnimationId": 329,
+            "displayMode": "NORMAL|STRETCH-TO-FIT"
+          }
+        ]
+      }
+    ],
+    "layoutTags": [
+      {
+        "layoutTag": "hello"
+      },
+      {
+        "layoutTag": "test"
+      },
+      {
+        "layoutTag": "world"
+      }
+    ],
+    "workFlowActivity": [
+      {
+        "workFlowActivityType": "REJECT",
+        "userId": 12,
+        "fullName": "Ashok Kumar",
+        "reason": "Background color was not good. Please change to yellow.",
+        "approverLevel": 2,
+        "roles": [
+          {
+            "roleId": 1,
+            "roleName": "CUSTOMER_ADMIN"
+          }
+        ],
+        "timestampOfActivity": 158446989797,
+        "displayString": "L1 Ashok Kumar"
+      },
+      {
+        "workFlowActivityType": "APPROVE",
+        "userId": 18,
+        "fullName": "Deepak",
+        "approverLevel": 1,
+        "roles": [
+          {
+            "roleId": 5,
+            "roleName": "APPROVER"
+          }
+        ],
+        "timestampOfActivity": 158446989797,
+        "displayString": "L2 Deepak"
+      },
+      {
+        "workFlowActivityType": "SUBMIT",
+        "userId": 18,
+        "fullName": "Naveen",
+        "approverLevel": null,
+        "roles": [
+          {
+            "roleId": 4,
+            "roleName": "MAKER"
+          }
+        ],
+        "timestampOfActivity": 158446989797,
+        "displayString": "L2 Deepak"
+      }
+    ]
+  },
+  "name": null,
+  "code": 0,
   "message": null
 }
 ```
