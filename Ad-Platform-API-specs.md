@@ -2,7 +2,8 @@
 
 1. [Login](#login)
 2. [Get Customers](#get-customers)
-3. [Get Devices for](#get-devices)
+3. [Get Devices](#get-devices)
+4. [Get Layout by ID](#get-layout-by-id)
 
 ## Login
 
